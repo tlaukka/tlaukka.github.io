@@ -1,1 +1,30 @@
-/* Styles */
+/* --- DEBUG --- */
+* {
+	border: 1px solid black;
+}
+
+.wrapper {
+	display: block;
+	width: 100%;
+}
+
+/* --- Navigation --- */
+.navigation {
+	text-transform: uppercase;
+	text-align: center;
+	list-style: none;
+}
+
+.navigation li {
+	display: inline;
+}
+
+.navigation a {
+	display: inline-block;
+	padding: 2rem;
+}
+
+/* --- Helper classes --- */
+.padding-md {
+	padding: 2rem;
+}
