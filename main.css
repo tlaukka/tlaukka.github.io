@@ -1,12 +1,13 @@
 /* --- DEBUG --- */
 * {
-	border: 1px solid black;
+	border: 1px solid black !important;
 }
 
 img {
-	border-style: solid;
-	border-color: red;
+	border-color: red !important;
 }
+
+/* ---------------------- */
 
 .wrapper {
 	display: block;
@@ -58,6 +59,10 @@ img {
 
 img .scale {
 	max-width: 100%;
+}
+
+.button-info {
+	font-size: 2rem;
 }
 
 /*.asset-img {
