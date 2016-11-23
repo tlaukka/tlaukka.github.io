@@ -3,10 +3,30 @@
 	border: 1px solid black;
 }
 
+img {
+	border-style: solid;
+	border-color: red;
+}
+
 .wrapper {
 	display: block;
 	width: 100%;
 }
+
+.content {
+	padding: 4rem 4rem;
+}
+
+.container-full {
+	max-width: none;
+}
+
+/*.intro-bg {
+	width: 100%;
+	height: 400px;
+	background-image: url('img_flowers.jpg');
+	background-size: cover;
+}*/
 
 /* --- Navigation --- */
 .navigation {
@@ -21,10 +41,43 @@
 
 .navigation a {
 	display: inline-block;
+	font-size: 3rem;
 	padding: 2rem;
 }
+
+.asset {
+
+}
+
+.asset-img {
+	/*max-height: 320px;
+	overflow: hidden;*/
+	/*min-height: 320px;*/
+	vertical-align: middle;
+}
+
+img .scale {
+	max-width: 100%;
+}
+
+/*.asset-img {
+	max-width: ;
+}*/
+
+.footer {
+	text-align: center;
+}
+
+/*.f {
+	background-color: #fafafa;
+}*/
 
 /* --- Helper classes --- */
 .padding-md {
 	padding: 2rem;
+}
+
+.center {
+	/*text-align: center;*/
+	align-content: center;
 }
