@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -14,50 +14,44 @@
 	<link rel="stylesheet" href="main.css">
 </head>
 <body>
-	<div class="wrapper">
+	<!-- Intro section -->
+	<header class="header">
+		<h1>Intro</h1>
+	</header>
 
-		<!-- Intro section -->
-		<!-- <header> -->
-		<div class="container header content">
-			<h1>Intro</h1>
-		</div>
-		<!-- </header> -->
+	<nav class="navigation">
+		<a href="#tl-info">about</a>
+		<a href="#tl-assets">assets</a>
+		<a href="#tl-contact">contact</a>
+	</nav>
 
-		<!-- Navigation -->
-		<!-- <nav> -->
-		<div class="container">
-		<ul class="navigation">
-			<li><a href="#">about</a></li>
-			<li><a href="#">assets</a></li>
-			<li><a href="#">contact</a></li>
-		</ul>
-		</div>
-		<!-- </nav> -->
+	<div class="main">
 
 		<!-- Asset section -->
-		<div class="container content">
+		<div id="tl-assets" class="container content">
 			<h1>Assest</h1>
-			<div class="row">
+			<div class="row asset">
 				<div class="column">
-					<div class="asset-img">
-						<img src="images/EUI_SFX_GAM.png">
-					</div>
+					<div class="asset-img" style="background-image:url('images/EUI_SFX_GAM.png');"></div>
 				</div>
 				<div class="column">
 					<h4>Asset 1</h4>
 					<p>
 						Asset description Asset description Asset description
 						Asset description Asset description Asset description
+						Asset description Asset description Asset description
+						Asset description Asset description Asset description
+						Asset description Asset description Asset description
+						Asset description Asset description Asset description
+						Asset description Asset description Asset description
+						Asset description Asset description Asset description
 					</p>
 					<a class="button button-clear button-info" href="#">More info</a>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row asset">
 				<div class="column">
-					<div class="asset-img">
-						<!-- <img src="images/EUI_SFX_logo_blue.png"> -->
-						<img src="images/Test02.png">
-					</div>
+					<div class="asset-img" style="background-image:url('images/Test02.png');"></div>
 				</div>
 				<div class="column">
 					<h4>Asset 2</h4>
@@ -71,23 +65,29 @@
 		</div>
 
 		<!-- About section -->
-		<div class="container content">
+		<div id="tl-about" class="container content">
 			<h1>About</h1>
+			<ul>
+				<li>Assets for games</li>
+			</ul>
 		</div>
 
-		<!-- Footer -->
-		<!-- <footer> -->
-		<div class="container content footer">
-			<!-- <div class="row"> -->
-				<!-- <div class="column column-center"> -->
-					<!-- <span = class="f">&copy; <script>document.write(new Date().getFullYear())</script> Teemu Laukka</span> -->
-					&copy; <script>document.write(new Date().getFullYear())</script> Teemu Laukka
-				<!-- </div> -->
-			<!-- </div> -->
+		<!-- Contact section -->
+		<div id="tl-contact" class="container content">
+			<h1>Contact</h1>
+			<ul><li>Email: teemulaukka@outlook.com</li></ul>
 		</div>
-		<!-- </footer> -->
 
-	</div> <!-- /wrapper -->
+	</div> <!-- /main -->
+
+	<!-- Footer -->
+	<footer class="container content footer">
+		&copy; <script>document.write(new Date().getFullYear())</script> Teemu Laukka
+	</footer>
+
+	<script src="lib/jquery-3.1.1.min/index.js"></script>
+	<script src="main.js"></script>
+	<script>tl.init();</script>
 
 </body>
 </html>

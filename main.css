@@ -9,19 +9,20 @@ img {
 
 /* ---------------------- */
 
-.wrapper {
-	display: block;
-	width: 100%;
-}
-
-.content {
-	padding: 4rem 4rem;
+/* --- General styles --- */
+body {
+	padding-top: 300px; /* Room for the header */
 }
 
 .container-full {
 	max-width: none;
 }
 
+.content {
+	padding: 4rem 4rem;
+}
+
+/* --- Header --- */
 /*.intro-bg {
 	width: 100%;
 	height: 400px;
@@ -29,53 +30,106 @@ img {
 	background-size: cover;
 }*/
 
-/* --- Navigation --- */
-.navigation {
-	text-transform: uppercase;
-	text-align: center;
-	list-style: none;
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	/*height: 250px;*/
+	/*padding-top: 50px;*/
+	height: 300px;
+	padding: 2rem;
+	background-color: gray;
 }
 
-.navigation li {
-	display: inline;
+/* --- Navigation --- */
+.navigation {
+	position: relative;
+	z-index: 100;
+	height: 8rem;
+	margin-bottom: -8rem;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #ffffff;
+	transition: all 0.1s ease-out;
+}
+
+.navigation-scrolled {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 8rem;
+}
+
+.navigation-shrunk {
+	height: 4rem;
+	background-color: rgba(255, 255, 255, 0.95);
 }
 
 .navigation a {
-	display: inline-block;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 	font-size: 3rem;
-	padding: 2rem;
+	height: 100%;
 }
 
-.asset {
+.navigation a ~ a {
+	margin-left: 2rem;
+}
 
+@media screen and (max-width: 430px) {
+	body {
+		padding-top: 100px; /* Room for the header */
+	}
+
+	.header {
+		height: 100px;
+	}
+
+	.navigation {
+		height: 4rem;
+		margin-bottom: -4rem;
+	}
+
+	.navigation a {
+		font-size: 2rem;
+	}
+
+	.navigation a ~ a {
+		margin-left: 0.7rem;
+	}
+}
+
+/* --- Main section --- */
+.main {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding-top: 140px;
+	background-color: #ffffff;
+}
+
+/* --- Assets --- */
+.asset {
+	margin-bottom: 1rem;
 }
 
 .asset-img {
-	/*max-height: 320px;
-	overflow: hidden;*/
-	/*min-height: 320px;*/
-	vertical-align: middle;
-}
-
-img .scale {
-	max-width: 100%;
+	height: 100%;
+	min-height: 30rem;
+	background-position: center;
+	background-size: cover;
 }
 
 .button-info {
 	font-size: 2rem;
 }
 
-/*.asset-img {
-	max-width: ;
-}*/
-
+/* --- Footer --- */
 .footer {
 	text-align: center;
+	background-color: #aaaaaa;
 }
-
-/*.f {
-	background-color: #fafafa;
-}*/
 
 /* --- Helper classes --- */
 .padding-md {

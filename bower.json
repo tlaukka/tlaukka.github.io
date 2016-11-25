@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "milligram": "^1.2.0"
+    "milligram": "^1.2.0",
+    "jquery-3.1.1.min": "https://code.jquery.com/jquery-3.1.1.min.js"
   }
 }
