@@ -1,6 +1,6 @@
 /* --- DEBUG --- */
 * {
-	border: 1px solid black !important;
+	/*border: 1px solid black !important;*/
 }
 
 img {
@@ -111,10 +111,28 @@ body {
 
 /* --- Assets --- */
 .asset {
-	margin-bottom: 1rem;
+	margin-bottom: 4rem;
+}
+
+/*.asset::after {
+	content: "";
+	position: absolute;
+	width: 500px;
+	border-bottom: 1px solid #ccc;
+	z-index: 10;
+}*/
+
+.separator {
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 4rem;
+	border-bottom: 1px solid #ccc;
 }
 
 .asset-img {
+	position: relative;
+	z-index: 1;
+	/*overflow: hidden;*/
 	height: 100%;
 	min-height: 30rem;
 	background-position: center;
@@ -132,11 +150,91 @@ body {
 }
 
 /* --- Helper classes --- */
-.padding-md {
-	padding: 2rem;
+
+
+
+
+
+.ribbon {
+	position: absolute;
+	text-transform: uppercase;
+	width: auto;
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding: 6px 20px 6px 30px;
+	margin: 20px 0px 0px -10px;
+	color: #f0f0f0;
+	background-color: #000;
+	/*text-shadow: 0px 1px 2px #bbb;*/
+	/*-webkit-box-shadow: 0px 2px 4px #888;
+	-moz-box-shadow: 0px 2px 4px #888;
+	box-shadow: 0px 2px 4px #888;*/
 }
 
-.center {
-	/*text-align: center;*/
-	align-content: center;
+/*.ribbon::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	width: 26px;
+	height: 0;
+	left: -16px;
+	top: 8px;
+	border-width: 18px 10px;
+	border-style: solid;
+	border-color: #999 #999 #999 transparent;
+}*/
+
+.ribbon::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 0px;
+	top: 100%;
+	border-width: 4px 5px;
+	border-style: solid;
+	border-color: #555 #555 transparent transparent;
 }
+
+.ribbon-soundfx { background-color: #39d; }
+.ribbon-tileset { background-color: #1b9; }
+
+
+
+
+
+.cr {
+	width: 200px;
+	padding: 16px;
+	position: absolute;
+	text-align: center;
+	color: #f0f0f0;
+}
+
+.cr-sticky {
+	position: fixed;
+}
+
+/* Positions */
+
+.cr-top    { top: 25px; }
+.cr-bottom { bottom: 25px; }
+.cr-left   { left: -50px; }
+.cr-right  { right: -50px; }
+
+/* Rotations */
+
+.cr-top.cr-left,
+.cr-bottom.cr-right {
+	transform: rotate(-45deg);
+}
+
+.cr-top.cr-right,
+.cr-bottom.cr-left {
+	transform: rotate(45deg);
+}
+
+/* Colors */
+
+.cr-soundfx { background-color: #39d; }
+.cr-tileset { background-color: #1b9; }
