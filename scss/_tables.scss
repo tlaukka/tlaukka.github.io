@@ -1,0 +1,20 @@
+// Main framework - Tables
+
+table {
+	text-align: left;
+	width: 100%;
+	margin: $tl-table-margin;
+
+	td, th {
+		border-bottom: 1px solid #e1e1e1;
+		padding: $tl-table-cell-padding;
+	}
+
+	td:first-child, th:first-child {
+		padding-left: 0;
+	}
+
+	td:last-child, th:last-child {
+		padding-right: 0;
+	}
+}

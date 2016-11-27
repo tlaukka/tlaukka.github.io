@@ -1,0 +1,40 @@
+// Main styles
+
+// $debug: true;
+
+@if global_variable_exists(debug) {
+	* {
+		border: 1px solid black !important;
+	}
+
+	img {
+		border-color: red !important;
+	}
+}
+
+@import 'variables';
+@import 'typografy';
+@import 'layout';
+@import 'lists';
+@import 'buttons';
+@import 'ribbons';
+
+//-----------------------------------------------------------------------------
+// Main section
+.main {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding-top: 140px;
+	background-color: #ffffff;
+}
+
+.asset-img {
+	position: relative;
+	z-index: 1;
+	/*overflow: hidden;*/
+	min-height: 30rem;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}

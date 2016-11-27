@@ -1,0 +1,88 @@
+// Main framework - Ribbons
+
+@mixin ribbon-h($direction, $margin-top, $color) {
+
+	position: absolute;
+	text-transform: uppercase;
+	width: auto;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #f0f0f0;
+	box-shadow: 0px 2px 4px #000;
+	background-color: $color;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		width: 0;
+		height: 0;
+		border-width: 4px 5px;
+		border-style: solid;
+		border-color: darken($color, 80%) darken($color, 80%) transparent transparent;
+	}
+
+	@if $direction == left {
+		padding: 6px 20px 6px 30px;
+		margin: $margin-top 0px 0px -10px;
+
+		&::after {
+			left: 0px;
+		}
+	}
+	@else if $direction == right {
+		padding: 6px 30px 6px 20px;
+		margin: $margin-top 0px -10px 0;
+
+		&::after {
+			right: 0px;
+		}
+	}
+}
+
+// Horizontal ribbons
+.ribbon-h-soundfx {
+	@include ribbon-h(left, 20px, #39d);
+}
+
+// .ribbon-h {
+// 	position: absolute;
+// 	text-transform: uppercase;
+// 	width: auto;
+// 	font-size: 1.5rem;
+// 	font-weight: bold;
+// 	color: #f0f0f0;
+// 	box-shadow: 0px 2px 4px #000;
+
+// 	&.ribbon-soundfx {
+// 		@include ribbon-h(left, 20px, #39d);
+// 	}
+// }
+
+/*.ribbon::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	width: 26px;
+	height: 0;
+	left: -16px;
+	top: 8px;
+	border-width: 18px 10px;
+	border-style: solid;
+	border-color: #999 #999 #999 transparent;
+}*/
+
+// .ribbon-h::after {
+// 	content: "";
+// 	position: absolute;
+// 	width: 0;
+// 	height: 0;
+// 	left: 0px;
+// 	top: 100%;
+// 	border-width: 4px 5px;
+// 	border-style: solid;
+// 	border-color: #555 #555 transparent transparent;
+// }
+
+// .ribbon-soundfx { background-color: #39d; }
+// .ribbon-tileset { background-color: #1b9; }

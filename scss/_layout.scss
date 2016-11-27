@@ -1,0 +1,73 @@
+// Main framework - Layout
+
+// Containers
+.container {
+	position: relative;
+	max-width: $container-max-width;
+	width: 100%;
+	margin: 0 auto;
+	padding: $container-padding;
+}
+
+.container-full {
+	max-width: none;
+}
+
+
+// Grid configuration
+.row {
+	display: flex;
+	flex-direction: row;
+	width: calc(100% + 2.0rem);
+	padding: 0;
+	margin-left: -1.0rem;
+
+	// Row item alignment
+	&.row-top { align-items: flex-start; }
+	&.row-bottom { align-items: flex-end; }
+	&.row-center { align-items: center; }
+
+	.col {
+		display: block;
+		flex: 1;
+		max-width: 100%;
+		width: 100%;
+		padding: 0 1.0rem;
+		// margin-left: 0;
+		margin-bottom: 2rem;
+	}
+
+	// Column offset
+	.col.col-offset-25 {
+		margin-left: 25%;
+	}
+
+	.col.col-offset-50 {
+		margin-left: 50%;
+	}
+
+	// Column width
+	.col.col-25 {
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+
+	.col.col-50 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+
+// Column content alignment
+.col {
+	.col-top { align-self: flex-start; }
+	.col-bottom { align-self: flex-end; }
+	.col-center { align-self: center; }
+}
+
+// Mobile breakpoint
+@media (max-width: 40rem) {
+	.row {
+		flex-direction: column;
+	}
+}

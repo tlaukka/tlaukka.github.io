@@ -1,0 +1,99 @@
+// Main framework - Typografy
+
+// General styles
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; // -> 1rem = 10px
+}
+
+body {
+	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: $tl-font-size;
+	font-weight: $tl-font-weight;
+	letter-spacing: $tl-letter-spacing;
+	line-height: $tl-line-height;
+	color: $tl-text-color;
+}
+
+*, *:after, *:before {
+	box-sizing: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+	font-weight: $tl-h-font-weight;
+	// letter-spacing: -.1rem;
+	// margin-bottom: 2.0rem;
+	margin-top: 0;
+}
+
+h1 {
+	font-size: $tl-h1-font-size;
+	line-height: $tl-h1-line-height;
+	margin-bottom: $tl-h1-margin-bottom;
+}
+
+h2 {
+	font-size: $tl-h2-font-size;
+	line-height: $tl-h2-line-height;
+	margin-bottom: $tl-h2-margin-bottom;
+}
+
+h3 {
+	font-size: $tl-h3-font-size;
+	line-height: $tl-h3-line-height;
+	margin-bottom: $tl-h3-margin-bottom;
+}
+
+h4 {
+	font-size: $tl-h4-font-size;
+	// letter-spacing: -.08rem;
+	line-height: $tl-h4-line-height;
+	margin-bottom: $tl-h4-margin-bottom;
+}
+
+h5 {
+	font-size: $tl-h5-font-size;
+	// letter-spacing: -.05rem;
+	line-height: $tl-h5-line-height;
+	margin-bottom: $tl-h5-margin-bottom;
+}
+
+h6 {
+	font-size: $tl-h6-font-size;
+	// letter-spacing: 0;
+	line-height: $tl-h6-line-height;
+	margin-bottom: $tl-h6-margin-bottom;
+}
+
+// Mobile breakpoint
+/*@media (max-width: 40rem) {
+	h1 { font-size: 5.0rem; }
+	h2 { font-size: 4.2rem; }
+	h3 { font-size: 3.6rem; }
+	h4 { font-size: 3.0rem; }
+	h5 { font-size: 2.4rem; }
+	h6 { font-size: 1.5rem; }
+}*/
+
+// Paragraph
+p { margin: 0 0 2.5rem 0; }
+
+// Bold and Strong
+b, strong, .strong { font-weight: 700; }
+
+// Italics
+em, .em { font-style: italic; }
+
+// Links
+a {
+	text-decoration: none;
+	color: $tl-link-color;
+
+	&:active { color: $tl-link-hover-color; }
+	&:hover { color: $tl-link-hover-color; }
+}

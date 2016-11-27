@@ -1,0 +1,43 @@
+// Main framework - Buttons
+
+.button {
+	display: inline-block;
+	cursor: pointer;
+	font-size: $tl-button-font-size;
+	font-weight: $tl-button-font-weight;
+	line-height: normal;
+	letter-spacing: 0.1rem;
+	padding: $tl-button-padding;
+	border: 1px solid $tl-button-color;
+	text-transform: uppercase;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: $tl-button-color;
+
+	&:hover {
+		background-color: $tl-button-hover-color;
+		border-color: $tl-button-hover-color
+	}
+
+	&.button-outline {
+		border: 1px solid $tl-button-color;
+		color: $tl-button-color;
+		background-color: transparent;
+	}
+
+	&.button-outline:hover {
+		color: $tl-button-hover-color;
+		border-color: $tl-button-hover-color;
+	}
+
+	&.button-link {
+		border: none;
+		color: $tl-button-color;
+		background-color: transparent;
+	}
+
+	&.button-link:hover {
+		color: $tl-button-hover-color;
+	}
+}

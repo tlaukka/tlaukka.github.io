@@ -1,0 +1,13 @@
+// Main framework - Lists
+
+ul, ol {
+	margin: $tl-list-margin;
+}
+
+ul {
+	list-style: disc inside;
+}
+
+ol {
+	list-style: decimal inside;
+}

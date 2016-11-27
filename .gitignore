@@ -9,3 +9,4 @@ Thumbs.db
 
 # Project files
 lib
+.sass-cache
