@@ -5,6 +5,7 @@
 	position: relative;
 	max-width: $container-max-width;
 	width: 100%;
+	height: 100%; // !!!!!!!!!!!!!!!!!!!!!!!
 	margin: 0 auto;
 	padding: $container-padding;
 }
@@ -33,7 +34,8 @@
 		max-width: 100%;
 		width: 100%;
 		padding: 0 1.0rem;
-		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+		// margin-bottom: 2rem;
 	}
 
 	// Column offset
@@ -65,10 +67,8 @@
 }
 
 // Mobile breakpoint
-@media (max-width: 40rem) {
+@media (max-width: $breakpoint-mobile) {
 	.row {
 		flex-direction: column;
-		background-color: red;
-		width: 100%;
 	}
 }
