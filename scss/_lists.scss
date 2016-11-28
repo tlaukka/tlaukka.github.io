@@ -11,3 +11,21 @@ ul {
 ol {
 	list-style: decimal inside;
 }
+
+ul.ul-arrow {
+	list-style: none;
+
+	li {
+		margin-left: 3rem;
+	}
+
+	li:before {
+		content: "";
+		display: inline-block;
+		position: relative;
+		left: -3.0rem;
+		border-width: 0.5rem 0 0.5rem 0.6rem;
+		border-style: solid;
+		border-color: transparent $tl-text-color;
+	}
+}

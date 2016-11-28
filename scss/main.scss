@@ -1,6 +1,8 @@
 // Main styles
 
-// $debug: true;
+//-----------------------------------------------------------------------------
+// Debug
+//$debug: true;
 
 @if global_variable_exists(debug) {
 	* {
@@ -12,12 +14,78 @@
 	}
 }
 
+//-----------------------------------------------------------------------------
+// Imports
 @import 'variables';
 @import 'typografy';
 @import 'layout';
 @import 'lists';
 @import 'buttons';
 @import 'ribbons';
+
+//-----------------------------------------------------------------------------
+// Variables
+$header-height: 30rem;
+$header-bg-color: #ccc;
+$separator-color: #ccc;
+$asset-margin-bottom: 4.0rem;
+$navigation-bg-color: #fff;
+$footer-bg-color: #aaa;
+
+//-----------------------------------------------------------------------------
+// General styles
+body {
+	padding-top: $header-height; /* Room for the header */
+}
+
+//-----------------------------------------------------------------------------
+// Header
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	/*padding-top: 50px;*/
+	height: $header-height;
+	padding: 2rem;
+	background-color: $header-bg-color;
+}
+
+//-----------------------------------------------------------------------------
+// Navigation
+.navigation {
+	position: relative;
+	z-index: 100;
+	height: 8rem;
+	margin-bottom: -8rem;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: $navigation-bg-color;
+	transition: all 0.1s ease-out;
+
+	&.navigation-scrolled {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		// height: 8rem;
+	}
+
+	&.navigation-shrunk {
+		height: 4rem;
+		background-color: rgba($navigation-bg-color, 0.95);
+	}
+
+	a {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 3rem;
+		height: 100%;
+	}
+
+	a ~ a {
+		margin-left: 2rem;
+	}
+}
 
 //-----------------------------------------------------------------------------
 // Main section
@@ -32,9 +100,28 @@
 .asset-img {
 	position: relative;
 	z-index: 1;
-	/*overflow: hidden;*/
+	// overflow: hidden;
 	min-height: 30rem;
 	height: 100%;
 	background-position: center;
 	background-size: cover;
+}
+
+.separator {
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: $asset-margin-bottom;
+	border-bottom: 1px solid $separator-color;
+}
+
+.asset {
+	margin-bottom: $asset-margin-bottom;
+}
+
+//-----------------------------------------------------------------------------
+// Footer
+.footer {
+	text-align: center;
+	padding: $asset-margin-bottom 0;
+	background-color: $footer-bg-color;
 }
