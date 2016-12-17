@@ -13,12 +13,12 @@ var tl = (function() {
 				navigation.removeClass("navigation-scrolled");
 			}
 
-			if ($(this).scrollTop() > header.outerHeight() + navigation.outerHeight()) {
-				navigation.addClass("navigation-shrunk");
-			}
-			else {
-				navigation.removeClass("navigation-shrunk");
-			}
+			// if ($(this).scrollTop() > header.outerHeight() + navigation.outerHeight()) {
+			// 	navigation.addClass("navigation-shrunk");
+			// }
+			// else {
+			// 	navigation.removeClass("navigation-shrunk");
+			// }
 		});
 
 		$(".navigation > a").click(function(event) {
