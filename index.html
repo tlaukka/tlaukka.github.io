@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Teemu Laukka">
-	<meta name="description" content="">
-	<!-- <meta name="keywords" content=""> -->
+	<meta name="description" content="Assets for games">
 	<title>TL - Assets</title>
 	<link rel="icon" type="image/png" href="favicon.png">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-	<link rel="stylesheet" href="lib/normalize.css/normalize.css">
+	<link rel="stylesheet" href="lib/normalize-css/normalize.css">
+	<link rel="stylesheet" href="css/icons.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body id="tl-home">
@@ -39,14 +39,45 @@
 					<p>
 						Sound effects aimed for menus and other user interfaces. Minimalistic and effective design.
 					</p>
-					<h5>Available in:</h5>
+					<h5>Available In</h5>
 					<ul class="ul-arrow">
 						<li><a target="_blank" href="http://u3d.as/rX4">Unity Asset Store</a></li>
 						<li><a target="_blank" href="https://www.gamedevmarket.net/asset/electro-ui-sound-effects-7144/">Game Dev Market</a></li>
 						<li><a target="_blank" href="https://www.gameassetmarket.com/downloads/electro-ui-sound-effects/">Game Asset Market</a></li>
 					</ul>
-					<a class="button button-outline" href="#">More info</a>
+					<!-- <button class="button button-outline" onclick="tl.toggleAssetInfo('info-euisfx');">More info</button> -->
 				</div>
+			</div>
+
+			<div id="info-euisfx" class="row asset asset-info">
+				<div class="col">
+					<h5>Package Contents</h5>
+					<p>
+						The package contains 136 one-shot UI sound effects.
+						Files are divided into 8 sub categories, each containing 17 unique effects.
+					</p>
+					<ul>
+						<li>Accept/Decline sounds</li>
+						<li>Open/Close sounds</li>
+						<li>Selection sounds</li>
+						<li>Clicks</li>
+						<li>Ticks</li>
+						<li>Beeps</li>
+					</ul>
+					<ul class="ul-arrow">
+						<li><a target="_blank" href="https://youtu.be/H9GowUJ413Q">Audio Preview</a></li>
+						<li><a target="_blank" href="https://youtu.be/BFQXCfD_HNc">UI Demo</a></li>
+					</ul>
+					<h5>Technical Details</h5>
+					<table>
+						<tr><td>Format</td><td>WAV</td></tr>
+						<tr><td>Bitrate</td><td>1411kbps</td></tr>
+						<tr><td>Sample rate</td><td>44.1kHz</td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="button-info" onclick="tl.toggleAssetInfo($(this), 'info-euisfx');">More Info<i class="icon-down-open"></i></div>
 			</div>
 
 			<div class="separator"></div>

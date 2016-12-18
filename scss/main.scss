@@ -43,6 +43,7 @@ $debug: true;
 @import 'lists';
 @import 'buttons';
 @import 'ribbons';
+@import 'tables';
 
 // Variables
 //-----------------------------------------------------------------------------
@@ -160,6 +161,10 @@ body {
 
 // Main section
 //-----------------------------------------------------------------------------
+.asset {
+	// margin-bottom: $asset-margin-bottom;
+}
+
 .asset-img {
 	position: relative;
 	z-index: 1;
@@ -167,6 +172,26 @@ body {
 	height: 100%;
 	background-position: center;
 	background-size: cover;
+	box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.75);
+}
+
+.asset-info {
+	display: none;
+}
+
+.button-info {
+	cursor: pointer;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.4rem;
+	width: 100%;
+	padding: 1rem 0 1rem 0;
+	color: $tl-link-color;
+
+	&:hover {
+		color: $tl-button-hover-color
+	}
 }
 
 .separator {
@@ -174,10 +199,6 @@ body {
 	margin: 0 auto;
 	margin-bottom: $asset-margin-bottom;
 	border-bottom: 1px solid $separator-color;
-}
-
-.asset {
-	margin-bottom: $asset-margin-bottom;
 }
 
 // Footer

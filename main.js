@@ -5,6 +5,7 @@ var tl = (function() {
 		var navigation = $(".navigation");
 		var header = $(".header");
 
+		// Sticky navigation
 		$(window).scroll(function() {
 			if ($(this).scrollTop() > header.outerHeight()) {
 				navigation.addClass("navigation-scrolled");
@@ -21,6 +22,7 @@ var tl = (function() {
 			// }
 		});
 
+		// Smooth scrolling navigation links
 		$(".navigation > a").click(function(event) {
 			if (this.hash !== "") {
 				event.preventDefault();
@@ -37,7 +39,21 @@ var tl = (function() {
 		});
 	}
 
+	function toggleAssetInfo(caller, id) {
+		var element = $("#" + id);
+
+		element.slideToggle(200, function() {
+			if (element.is(":visible")) {
+				caller.html("Less Info<i class='icon-up-open'></i>");
+			}
+			else {
+				caller.html("More Info<i class='icon-down-open'></i>");
+			}
+		});
+	}
+
 	return {
-		init: init
+		init: init,
+		toggleAssetInfo: toggleAssetInfo
 	};
 })();
