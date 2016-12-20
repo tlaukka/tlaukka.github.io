@@ -1,12 +1,16 @@
 // Main framework - Tables
 
 table {
+	border-collapse: collapse;
 	text-align: left;
 	width: 100%;
 	margin: $tl-table-margin;
 
-	td, th {
+	tr {
 		border-bottom: 1px solid #e1e1e1;
+	}
+
+	td, th {
 		padding: $tl-table-cell-padding;
 	}
 

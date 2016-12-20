@@ -2,7 +2,7 @@
 
 // Debug
 //-----------------------------------------------------------------------------
-$debug: true;
+// $debug: true;
 
 @if global_variable_exists(debug) {
 	* {
@@ -19,6 +19,7 @@ $debug: true;
 
 	.container {
 		background-color: #ffaaaa;
+		box-shadow: 0 20px 20px -14px rgba(0, 0, 0, 0.75);
 	}
 
 	.row {
@@ -35,6 +36,27 @@ $debug: true;
 	}
 }
 
+// Variables
+//-----------------------------------------------------------------------------
+$header-height: 30rem;
+$navigation-height: 8rem;
+$asset-margin-bottom: 4.0rem;
+
+// Color scheme
+//-----------------------------------------------------------------------------
+$tl-text-color: #b5b5b7;
+$tl-link-color: #f2b632;
+$tl-link-hover-color: darken($tl-link-color, 25%);
+$tl-button-color: #f2b632;
+$tl-button-hover-color: darken($tl-button-color, 25%);;
+
+$bg-color: #252839;
+$header-bg-color: #ccc;
+$navigation-bg-color: #677077;
+$content-bg-color: #252839;
+$separator-color: #ccc;
+$footer-bg-color: #aaa;
+
 // Imports
 //-----------------------------------------------------------------------------
 @import 'variables';
@@ -44,15 +66,7 @@ $debug: true;
 @import 'buttons';
 @import 'ribbons';
 @import 'tables';
-
-// Variables
-//-----------------------------------------------------------------------------
-$header-height: 30rem;
-$header-bg-color: #ccc;
-$separator-color: #ccc;
-$asset-margin-bottom: 4.0rem;
-$navigation-bg-color: #fff;
-$footer-bg-color: #aaa;
+@import 'mixins';
 
 // General styles
 //-----------------------------------------------------------------------------
@@ -65,9 +79,17 @@ body {
 	display: block;
 	width: 100%;
 	height: 100%;
-	padding-top: 14rem;
+	padding-top: 8rem;
 	margin: 0;
-	background-color: #fff;
+	background-color: $content-bg-color;
+
+	&.content-top {
+		padding-top: 14rem;
+	}
+}
+
+.container {
+	@include shadow-lg;
 }
 
 @media (max-width: $breakpoint-mobile) {
@@ -111,23 +133,23 @@ body {
 .navigation {
 	position: relative;
 	z-index: 100;
-	height: 8rem;
-	margin-bottom: -8rem;
+	height: $navigation-height;
+	margin-bottom: -$navigation-height;
 	text-transform: uppercase;
 	text-align: center;
 	background-color: $navigation-bg-color;
 	transition: all 0.1s ease-out;
+	@include shadow-sm;
 
 	&.navigation-scrolled {
 		position: fixed;
 		top: 0;
 		width: 100%;
-		// height: 8rem;
 		background-color: rgba($navigation-bg-color, 0.98);
 	}
 
 	&.navigation-shrunk {
-		height: 4rem;
+		height: $navigation-height / 2;
 		background-color: rgba($navigation-bg-color, 0.98);
 	}
 
@@ -172,7 +194,7 @@ body {
 	height: 100%;
 	background-position: center;
 	background-size: cover;
-	box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.75);
+	@include shadow-sm;
 }
 
 .asset-info {
@@ -188,6 +210,7 @@ body {
 	width: 100%;
 	padding: 1rem 0 1rem 0;
 	color: $tl-link-color;
+	// @include shadow-lg;
 
 	&:hover {
 		color: $tl-button-hover-color
@@ -198,7 +221,7 @@ body {
 	width: 80%;
 	margin: 0 auto;
 	margin-bottom: $asset-margin-bottom;
-	border-bottom: 1px solid $separator-color;
+	// border-bottom: 1px solid $separator-color;
 }
 
 // Footer
