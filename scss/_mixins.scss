@@ -3,5 +3,6 @@
 }
 
 @mixin shadow-lg {
-	box-shadow: 0 32px 32px -32px rgba(0, 0, 0, 0.75);
+	// box-shadow: 0 14px 26px -8px rgba(0, 0, 0, 0.75);
+	box-shadow: 0 14px 0px -10px rgba(0, 0, 0, 0.75);
 }
