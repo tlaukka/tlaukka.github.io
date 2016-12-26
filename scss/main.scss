@@ -49,9 +49,9 @@ $header-info-font: 'Architects Daughter', cursive;
 
 $tl-text-color: #b5b5b7;
 $tl-link-color: #FF8600;
-$tl-link-hover-color: darken($tl-link-color, 25%);
-$tl-button-color: #f2b632;
-$tl-button-hover-color: darken($tl-button-color, 25%);;
+$tl-link-hover-color: darken($tl-link-color, 15%);
+$tl-button-color: #FF8600;
+$tl-button-hover-color: darken($tl-button-color, 15%);;
 
 $header-bg-color: #ccc;
 $navigation-bg-color: #1C2538;
@@ -205,9 +205,9 @@ body {
 
 // Main section
 //-----------------------------------------------------------------------------
-.asset {
-	// margin-bottom: $asset-margin-bottom;
-}
+// .asset {
+// 	margin-bottom: $asset-margin-bottom;
+// }
 
 .asset-img {
 	position: relative;
@@ -219,14 +219,73 @@ body {
 	@include shadow-sm;
 }
 
+// .asset-img-area {
+// 	background-color: red;
+// }
+
+// .description-area {
+// 	background-color: red;
+// }
+
+// .title-area {
+// 	background-color: red;
+// }
+
+.desc-cont {
+	display: flex;
+	flex-direction: column;
+	// padding: 0;
+	background-color: red;
+	box-shadow: none;
+	height: 100%;
+}
+
+.desc {
+	flex: 1;
+}
+
+.store-cont {
+	background-color: #1C2538;
+}
+
+// .store-area-row {
+// 	position: relative;
+// 	top: 1.0rem; /* Offset area to fill the gap */
+// 	width: 100%;
+// 	padding: 0;
+// 	margin: -1.0rem 0 0 0; /* Negate the offset */
+// 	background-color: #1C2538;
+// }
+
+.col.store-area-col {
+	padding-bottom: 0;
+
+	// h5 {
+	// 	margin: 0;
+	// }
+
+	// ul {
+	// 	margin: 0;
+	// }
+}
+
+// .info-area {
+// 	background-color: red;
+// }
+
 .asset-info {
 	display: none; /* Info hidden by default */
 	// background-color: $asset-info-bg-color;
 
-	.info-area {
-		padding: 2rem;
-		background-color: $asset-info-bg-color;
-	}
+	// .info-area {
+	// 	padding: 2rem;
+	// 	background-color: $asset-info-bg-color;
+	// }
+}
+
+.desc-area {
+	padding: 2rem;
+	background-color: $asset-info-bg-color;
 }
 
 .button-info {
