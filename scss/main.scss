@@ -38,28 +38,46 @@
 
 // Variables
 //-----------------------------------------------------------------------------
+// Overrides
+$tl-container-padding: 2.0rem 2.0rem;
+
+// Dimensions
 $header-height: 30rem;
 $navigation-height: 8rem;
-$container-padding: 2.0rem 2.0rem;
 $asset-margin-bottom: 4.0rem;
 
-// Color scheme
-//-----------------------------------------------------------------------------
+// Typografy
 $header-info-font: 'Architects Daughter', cursive;
+$navigation-font: 'Lato', sans-serif;
 
-$tl-text-color: #b5b5b7;
-$tl-link-color: #FF8600;
+// Color scheme
+$tl-text-color: #939ABD;
+$tl-link-color: #A3EEA0;
 $tl-link-hover-color: darken($tl-link-color, 15%);
-$tl-button-color: #FF8600;
-$tl-button-hover-color: darken($tl-button-color, 15%);;
+$tl-button-color: #A3EEA0;
+$tl-button-hover-color: darken($tl-button-color, 15%);
+$tl-table-border-color: lighten(#363A4E, 5%);
 
 $header-bg-color: #ccc;
-$navigation-bg-color: #1C2538;
-$content-bg-color: #1C2538;
-$container-bg-color: #6B7692;
-$asset-info-bg-color: #1C2538;
-$separator-color: #ccc;
-$footer-bg-color: #1C2538;
+
+// $navigation-bg-color: #303340;
+// $content-bg-color: #1C2538;
+// $container-bg-color: #6B7692;
+// $asset-info-bg-color: #1C2538;
+// $separator-color: #424658;
+// $footer-bg-color: #303340;
+
+
+//---------------------------
+
+
+$content-bg-color: darken(#363A4E, 8%);
+$container-bg-color: transparent;
+$asset-info-bg-color: #363A4E;
+
+$navigation-bg-color: $asset-info-bg-color;
+$separator-color: $asset-info-bg-color;
+$footer-bg-color: $content-bg-color;
 
 // Imports
 //-----------------------------------------------------------------------------
@@ -78,37 +96,31 @@ body {
 	padding-top: $header-height; /* Room for the header */
 }
 
+// p {
+// 	color: #DEE2F7;
+// }
+
 .content {
 	position: relative;
 	display: block;
 	width: 100%;
 	height: 100%;
-	padding-top: 8.0rem;
+	// padding-top: $navigation-height;
 	margin: 0;
 	background-color: $content-bg-color;
 
 	&.content-top {
-		padding-top: 14.0rem;
+		// padding-top: 2 * $navigation-height; /* Room for navigation */
+		padding-top: 1.5 * $navigation-height; /* Room for navigation */
 	}
 }
 
 .container {
 	background-color: $container-bg-color;
-	@include shadow-lg;
-	// border-width: 0 4px 4px 0;
-	// border-width: 0 0 0 4px;
-	// border-style: solid;
-	// border-color: #ccc;
-
-	// p {
-	// 	padding-left: 3rem;
-	// 	border-width: 0 0 0 4px;
-	// 	border-style: solid;
-	// 	border-color: #ccc;
-	// }
+	// @include shadow-lg;
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media (max-width: $tl-breakpoint-mobile) {
 	body {
 		padding-top: 0.5 * $header-height; /* Room for the header */
 	}
@@ -140,7 +152,7 @@ body {
 	}
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media (max-width: $tl-breakpoint-mobile) {
 	.header {
 		height: 0.5 * $header-height;
 
@@ -153,6 +165,7 @@ body {
 // Navigation
 //-----------------------------------------------------------------------------
 .navigation {
+	font-family: $navigation-font;
 	position: relative;
 	z-index: 100;
 	height: $navigation-height;
@@ -161,7 +174,7 @@ body {
 	text-align: center;
 	background-color: $navigation-bg-color;
 	transition: all 0.1s ease-out;
-	// @include shadow-sm;
+	// @include shadow;
 
 	&.navigation-scrolled {
 		position: fixed;
@@ -179,16 +192,22 @@ body {
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
-		font-size: 3rem;
+		font-size: 3.0rem;
 		height: 100%;
 	}
 
 	a ~ a {
-		margin-left: 2rem;
+		// margin-left: 2.0rem;
+
+		&::before {
+			content: '\00B7';
+			color: $tl-link-color;
+			margin: 0 1.0rem;
+		}
 	}
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media (max-width: $tl-breakpoint-mobile) {
 	.navigation {
 		height: 4rem;
 		margin-bottom: -4rem;
@@ -205,99 +224,61 @@ body {
 
 // Main section
 //-----------------------------------------------------------------------------
-// .asset {
-// 	margin-bottom: $asset-margin-bottom;
-// }
+.col.col-asset {
+	padding: 0;
+}
+
+.col.col-info {
+	padding: 0 1.0rem;
+}
 
 .asset-img {
 	position: relative;
+	left: -1.0rem;
 	z-index: 1;
-	min-height: 30rem;
-	height: 100%;
+	min-height: 30.0rem;
+	width: calc(100% + 1.0rem);
+	height: calc(100% + 1.0rem);
 	background-position: center;
 	background-size: cover;
-	@include shadow-sm;
+	@include shadow-lg;
 }
 
-// .asset-img-area {
-// 	background-color: red;
-// }
-
-// .description-area {
-// 	background-color: red;
-// }
-
-// .title-area {
-// 	background-color: red;
-// }
-
-.desc-cont {
+.asset-description-container {
 	display: flex;
 	flex-direction: column;
-	// padding: 0;
-	background-color: red;
 	box-shadow: none;
 	height: 100%;
+
+	.asset-description {
+		flex: 1;
+		padding: 2.0rem;
+	}
+
+	.store-listing {
+		background-color: $asset-info-bg-color;
+	}
 }
-
-.desc {
-	flex: 1;
-}
-
-.store-cont {
-	background-color: #1C2538;
-}
-
-// .store-area-row {
-// 	position: relative;
-// 	top: 1.0rem; /* Offset area to fill the gap */
-// 	width: 100%;
-// 	padding: 0;
-// 	margin: -1.0rem 0 0 0; /* Negate the offset */
-// 	background-color: #1C2538;
-// }
-
-.col.store-area-col {
-	padding-bottom: 0;
-
-	// h5 {
-	// 	margin: 0;
-	// }
-
-	// ul {
-	// 	margin: 0;
-	// }
-}
-
-// .info-area {
-// 	background-color: red;
-// }
 
 .asset-info {
 	display: none; /* Info hidden by default */
-	// background-color: $asset-info-bg-color;
 
-	// .info-area {
-	// 	padding: 2rem;
-	// 	background-color: $asset-info-bg-color;
-	// }
-}
-
-.desc-area {
-	padding: 2rem;
-	background-color: $asset-info-bg-color;
+	.asset-info-area {
+		padding: 2.0rem;
+		background-color: darken($asset-info-bg-color, 5%);
+		@include shadow(inset);
+	}
 }
 
 .button-info {
 	cursor: pointer;
 	text-align: center;
 	text-transform: uppercase;
-	font-weight: bold;
 	font-size: 1.4rem;
 	width: 100%;
-	padding: 1rem 0 1rem 0;
+	padding: 2.0rem 0;
 	color: $tl-link-color;
-	// @include shadow-lg;
+	background-color: $asset-info-bg-color;
 
 	&:hover {
 		color: $tl-button-hover-color
@@ -305,10 +286,19 @@ body {
 }
 
 .separator {
-	width: 80%;
+	// width: 80%;
 	margin: 0 auto;
-	margin-bottom: $asset-margin-bottom;
-	// border-bottom: 1px solid $separator-color;
+	// margin-top: $asset-margin-bottom;
+	margin-top: $navigation-height;
+	margin-bottom: $navigation-height / 2;
+	border-bottom: 1px solid $separator-color;
+}
+
+@media (max-width: $tl-breakpoint-mobile) {
+	.asset-img {
+		top: -1.0rem;
+		width: calc(100% + 2.0rem);
+	}
 }
 
 // Footer
@@ -316,5 +306,6 @@ body {
 .footer {
 	text-align: center;
 	padding: $asset-margin-bottom 0;
+	color: lighten(#363A4E, 5%);
 	background-color: $footer-bg-color;
 }

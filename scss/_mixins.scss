@@ -1,8 +1,20 @@
+$tl-shadow-color: rgba(0, 0, 0, 0.5);
+
 @mixin shadow-sm {
-	box-shadow: 0 10px 12px -8px rgba(0, 0, 0, 0.75);
+	box-shadow: 0 10px 12px -8px $tl-shadow-color;
+	// box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
 }
 
 @mixin shadow-lg {
-	// box-shadow: 0 14px 26px -8px rgba(0, 0, 0, 0.75);
-	box-shadow: 0 14px 0px -10px rgba(0, 0, 0, 0.75);
+	box-shadow: 0 12px 35px -12px rgba(0, 0, 0, 0.75);
+	// box-shadow: 0 16px 0 -12px $tl-shadow-color;
+}
+
+@mixin shadow-lg-top {
+	box-shadow: 0 -14px 26px -8px rgba(0, 0, 0, 0.75);
+}
+
+@mixin shadow($inset: "") {
+	box-shadow: 0 12px 24px -18px $tl-shadow-color unquote($inset),
+				0 -12px 24px -18px $tl-shadow-color unquote($inset);
 }

@@ -6,7 +6,7 @@ $tl-font-size: 1.6em !default;
 $tl-font-weight: 300 !default;
 $tl-letter-spacing: .01em !default;
 $tl-line-height: 1.6 !default;
-$tl-text-color: #606c76 !default;
+$tl-text-color: #B5B5B7 !default;
 
 // Headings
 $tl-h-font-weight: 300 !default;
@@ -36,8 +36,8 @@ $tl-h6-line-height: 1.4 !default;
 $tl-h6-margin-bottom: 1rem !default;
 
 // Links
-$tl-link-color: #9b4dca !default;
-$tl-link-hover-color: #606c76 !default;
+$tl-link-color: #FF8600 !default;
+$tl-link-hover-color: darken($tl-link-color, 15%) !default;
 
 // Lists
 //-----------------------------------------------------------------------------
@@ -47,6 +47,7 @@ $tl-list-margin: 0 0 2.5rem 0 !default;
 //-----------------------------------------------------------------------------
 $tl-table-margin: 0 0 2.5rem 0 !default;
 $tl-table-cell-padding: 1.2rem 1.5rem !default;
+$tl-table-border-color: #B5B5B7 !default;
 
 // Buttons
 //-----------------------------------------------------------------------------
@@ -63,9 +64,10 @@ $tl-button-padding: 1.0rem 3.0rem !default;
 
 // Layout
 //-----------------------------------------------------------------------------
-$container-max-width: 112.0rem !default;
-$container-padding: 0 2.0rem !default;
+$tl-container-max-width: 112.0rem !default;
+$tl-container-padding: 0 2.0rem !default;
+$tl-column-padding: 0 1.0rem 2.0rem 1.0rem !default;
 
 // Breakpoints
 //-----------------------------------------------------------------------------
-$breakpoint-mobile: 40rem !default;
+$tl-breakpoint-mobile: 40rem !default;

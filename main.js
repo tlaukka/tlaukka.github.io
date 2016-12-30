@@ -7,12 +7,12 @@ var tl = (function() {
 
 		// Sticky navigation
 		$(window).scroll(function() {
-			if ($(this).scrollTop() > header.outerHeight()) {
-				navigation.addClass("navigation-scrolled");
-			}
-			else {
-				navigation.removeClass("navigation-scrolled");
-			}
+			// if ($(this).scrollTop() > header.outerHeight()) {
+			// 	navigation.addClass("navigation-scrolled");
+			// }
+			// else {
+			// 	navigation.removeClass("navigation-scrolled");
+			// }
 
 			// if ($(this).scrollTop() > header.outerHeight() + navigation.outerHeight()) {
 			// 	navigation.addClass("navigation-shrunk");
@@ -44,10 +44,10 @@ var tl = (function() {
 
 		element.slideToggle(200, function() {
 			if (element.is(":visible")) {
-				caller.html("Less Info<i class='icon-up-open'></i>");
+				caller.html("Less Info<i class='icon-angle-double-up'></i>");
 			}
 			else {
-				caller.html("More Info<i class='icon-down-open'></i>");
+				caller.html("More Info<i class='icon-angle-double-down'></i>");
 			}
 		});
 	}
