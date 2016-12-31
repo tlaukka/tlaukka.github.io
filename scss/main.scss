@@ -47,37 +47,20 @@ $navigation-height: 8rem;
 $asset-margin-bottom: 4.0rem;
 
 // Typografy
-$header-info-font: 'Architects Daughter', cursive;
-$navigation-font: 'Lato', sans-serif;
+$font-accent-cursive: 'Architects Daughter', cursive;
+$font-accent-thin: 'Lato', sans-serif;
 
 // Color scheme
+$color-base: #252836;
+$color-accent-light: #363A4E;
+$color-accent-dark: darken($color-accent-light, 5%);
+
 $tl-text-color: #939ABD;
 $tl-link-color: #A3EEA0;
 $tl-link-hover-color: darken($tl-link-color, 15%);
 $tl-button-color: #A3EEA0;
 $tl-button-hover-color: darken($tl-button-color, 15%);
 $tl-table-border-color: lighten(#363A4E, 5%);
-
-$header-bg-color: #ccc;
-
-// $navigation-bg-color: #303340;
-// $content-bg-color: #1C2538;
-// $container-bg-color: #6B7692;
-// $asset-info-bg-color: #1C2538;
-// $separator-color: #424658;
-// $footer-bg-color: #303340;
-
-
-//---------------------------
-
-
-$content-bg-color: darken(#363A4E, 8%);
-$container-bg-color: transparent;
-$asset-info-bg-color: #363A4E;
-
-$navigation-bg-color: $asset-info-bg-color;
-$separator-color: $asset-info-bg-color;
-$footer-bg-color: $content-bg-color;
 
 // Imports
 //-----------------------------------------------------------------------------
@@ -94,30 +77,39 @@ $footer-bg-color: $content-bg-color;
 //-----------------------------------------------------------------------------
 body {
 	padding-top: $header-height; /* Room for the header */
+	background-color: green;
 }
 
-// p {
-// 	color: #DEE2F7;
-// }
-
-.content {
+.wrapper {
 	position: relative;
-	display: block;
 	width: 100%;
 	height: 100%;
-	// padding-top: $navigation-height;
 	margin: 0;
-	background-color: $content-bg-color;
+	padding: 0;
+	background-color: $color-base;
 
-	&.content-top {
-		// padding-top: 2 * $navigation-height; /* Room for navigation */
-		padding-top: 1.5 * $navigation-height; /* Room for navigation */
+	.content {
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
 	}
-}
 
-.container {
-	background-color: $container-bg-color;
-	// @include shadow-lg;
+	.separator {
+		margin-top: $navigation-height;
+		margin-bottom: $navigation-height / 2;
+		border-bottom: 1px solid $color-accent-light;
+		background-color: $color-base;
+	}
+
+	.separator:first-of-type,
+	.separator:last-of-type {
+		border: none;
+	}
+
+	.separator:first-of-type {
+		margin-top: 1.5 * $navigation-height;
+	}
 }
 
 @media (max-width: $tl-breakpoint-mobile) {
@@ -133,11 +125,11 @@ body {
 	top: 0;
 	width: 100%;
 	height: $header-height;
-	background-color: $header-bg-color;
+	background-color: $color-accent-light;
 
 	.header-img {
 		position: relative;
-		z-index: 1;
+		// z-index: 1;
 		min-height: $header-height;
 		height: 100%;
 		background-position: center;
@@ -145,8 +137,8 @@ body {
 	}
 
 	.header-info {
-		font-family: $header-info-font;
-		font-style: italic;
+		font-family: $font-accent-cursive;
+		// font-style: italic;
 		font-size: 2.0rem;
 		padding: 2.0rem;
 	}
@@ -165,14 +157,16 @@ body {
 // Navigation
 //-----------------------------------------------------------------------------
 .navigation {
-	font-family: $navigation-font;
 	position: relative;
-	z-index: 100;
+	font-family: $font-accent-thin;
+	// z-index: 100;
 	height: $navigation-height;
 	margin-bottom: -$navigation-height;
 	text-transform: uppercase;
 	text-align: center;
-	background-color: $navigation-bg-color;
+	// background-color: $color-accent-light;
+	@include gradient-stripes($color-base, $color-accent-dark);
+	// @include gradient-stripes($content-bg-color, $asset-info-bg-color);
 	transition: all 0.1s ease-out;
 	// @include shadow;
 
@@ -180,12 +174,12 @@ body {
 		position: fixed;
 		top: 0;
 		width: 100%;
-		background-color: rgba($navigation-bg-color, 0.98);
+		background-color: rgba($color-accent-light, 0.98);
 	}
 
 	&.navigation-shrunk {
 		height: $navigation-height / 2;
-		background-color: rgba($navigation-bg-color, 0.98);
+		background-color: rgba($color-accent-light, 0.98);
 	}
 
 	a {
@@ -200,7 +194,7 @@ body {
 		// margin-left: 2.0rem;
 
 		&::before {
-			content: '\00B7';
+			content: '\00B7'; /* Middle dot between nav items */
 			color: $tl-link-color;
 			margin: 0 1.0rem;
 		}
@@ -235,7 +229,7 @@ body {
 .asset-img {
 	position: relative;
 	left: -1.0rem;
-	z-index: 1;
+	// z-index: 1;
 	min-height: 30.0rem;
 	width: calc(100% + 1.0rem);
 	height: calc(100% + 1.0rem);
@@ -256,7 +250,7 @@ body {
 	}
 
 	.store-listing {
-		background-color: $asset-info-bg-color;
+		background-color: $color-accent-light;
 	}
 }
 
@@ -265,7 +259,7 @@ body {
 
 	.asset-info-area {
 		padding: 2.0rem;
-		background-color: darken($asset-info-bg-color, 5%);
+		background-color: $color-accent-dark;
 		@include shadow(inset);
 	}
 }
@@ -278,20 +272,12 @@ body {
 	width: 100%;
 	padding: 2.0rem 0;
 	color: $tl-link-color;
-	background-color: $asset-info-bg-color;
+	background-color: $color-accent-light;
+	// @include gradient-stripes($color-base, $color-accent-dark);
 
 	&:hover {
 		color: $tl-button-hover-color
 	}
-}
-
-.separator {
-	// width: 80%;
-	margin: 0 auto;
-	// margin-top: $asset-margin-bottom;
-	margin-top: $navigation-height;
-	margin-bottom: $navigation-height / 2;
-	border-bottom: 1px solid $separator-color;
 }
 
 @media (max-width: $tl-breakpoint-mobile) {
@@ -306,6 +292,7 @@ body {
 .footer {
 	text-align: center;
 	padding: $asset-margin-bottom 0;
-	color: lighten(#363A4E, 5%);
-	background-color: $footer-bg-color;
+	// color: $color-accent-light;
+	// background-color: $color-base;
+	@include gradient-stripes($color-base, $color-accent-dark);
 }

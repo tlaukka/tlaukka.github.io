@@ -18,3 +18,13 @@ $tl-shadow-color: rgba(0, 0, 0, 0.5);
 	box-shadow: 0 12px 24px -18px $tl-shadow-color unquote($inset),
 				0 -12px 24px -18px $tl-shadow-color unquote($inset);
 }
+
+@mixin gradient-stripes($color1, $color2) {
+	background: repeating-linear-gradient(
+		45deg,
+		$color1,
+		$color1 10px,
+		$color2 10px,
+		$color2 20px
+	);
+}
