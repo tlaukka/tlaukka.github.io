@@ -7,7 +7,8 @@ html {
 }
 
 body {
-	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	// font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-family: $tl-font-family;
 	font-size: $tl-font-size;
 	font-weight: $tl-font-weight;
 	letter-spacing: $tl-letter-spacing;

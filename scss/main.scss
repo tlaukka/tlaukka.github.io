@@ -39,6 +39,7 @@
 // Variables
 //-----------------------------------------------------------------------------
 // Overrides
+// $tl-font-family: 'Source Sans Pro', sans-serif;;
 $tl-container-padding: 2.0rem 2.0rem;
 
 // Dimensions
@@ -292,7 +293,7 @@ body {
 .footer {
 	text-align: center;
 	padding: $asset-margin-bottom 0;
-	// color: $color-accent-light;
+	color: darken($tl-text-color, 20%);
 	// background-color: $color-base;
 	@include gradient-stripes($color-base, $color-accent-dark);
 }
