@@ -7,12 +7,12 @@ var tl = (function() {
 
 		// Sticky navigation
 		$(window).scroll(function() {
-			// if ($(this).scrollTop() > header.outerHeight()) {
-			// 	navigation.addClass("navigation-scrolled");
-			// }
-			// else {
-			// 	navigation.removeClass("navigation-scrolled");
-			// }
+			if ($(this).scrollTop() > header.outerHeight()) {
+				navigation.addClass("navigation-scrolled");
+			}
+			else {
+				navigation.removeClass("navigation-scrolled");
+			}
 
 			// if ($(this).scrollTop() > header.outerHeight() + navigation.outerHeight()) {
 			// 	navigation.addClass("navigation-shrunk");
@@ -37,6 +37,19 @@ var tl = (function() {
 				});
 			}
 		});
+
+		function addEmail() {
+			var email = $(".email");
+
+			var m1 = "teemulaukka";
+			var m2 = "@outlook.com";
+
+			email.append(m1);
+			email.append("<span style='display:none'>foo</span>");
+			email.append(m2);
+		}
+
+		addEmail();
 	}
 
 	function toggleAssetInfo(caller, id) {

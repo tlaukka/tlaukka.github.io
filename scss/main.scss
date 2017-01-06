@@ -74,51 +74,6 @@ $tl-table-border-color: lighten(#363A4E, 5%);
 @import 'tables';
 @import 'mixins';
 
-// General styles
-//-----------------------------------------------------------------------------
-body {
-	padding-top: $header-height; /* Room for the header */
-	background-color: green;
-}
-
-.wrapper {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background-color: $color-base;
-
-	.content {
-		display: block;
-		width: 100%;
-		height: 100%;
-		margin: 0;
-	}
-
-	.separator {
-		margin-top: $navigation-height;
-		margin-bottom: $navigation-height / 2;
-		border-bottom: 1px solid $color-accent-light;
-		background-color: $color-base;
-	}
-
-	.separator:first-of-type,
-	.separator:last-of-type {
-		border: none;
-	}
-
-	.separator:first-of-type {
-		margin-top: 1.5 * $navigation-height;
-	}
-}
-
-@media (max-width: $tl-breakpoint-mobile) {
-	body {
-		padding-top: 0.5 * $header-height; /* Room for the header */
-	}
-}
-
 // Header
 //-----------------------------------------------------------------------------
 .header {
@@ -155,12 +110,61 @@ body {
 	}
 }
 
+// Main content
+//-----------------------------------------------------------------------------
+.wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	margin-top: $header-height; /* Room for the header */
+	background-color: $color-base;
+
+	.content {
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
+
+	.content:first-of-type {
+		padding-top: 2 * $navigation-height;
+	}
+
+	.separator {
+		margin-top: $navigation-height;
+		margin-bottom: $navigation-height / 2;
+		border-bottom: 1px solid $color-accent-light;
+		background-color: $color-base;
+	}
+
+	// .separator:first-of-type,
+	.separator:last-of-type {
+		border: none;
+	}
+
+	// .separator:first-of-type {
+	// 	margin-top: 1.5 * $navigation-height;
+	// }
+}
+
+@media (max-width: $tl-breakpoint-mobile) {
+	.wrapper {
+		margin-top: 0.5 * $header-height; /* Room for the header */
+
+		.content:first-of-type {
+			padding-top: $navigation-height;
+		}
+	}
+}
+
 // Navigation
 //-----------------------------------------------------------------------------
 .navigation {
 	position: relative;
 	font-family: $font-accent-thin;
-	// z-index: 100;
+	z-index: 100;
 	height: $navigation-height;
 	margin-bottom: -$navigation-height;
 	text-transform: uppercase;
