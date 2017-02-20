@@ -48,8 +48,11 @@ $navigation-height: 8rem;
 $asset-margin-bottom: 4.0rem;
 
 // Typografy
-$font-accent-cursive: 'Architects Daughter', cursive;
-$font-accent-thin: 'Lato', sans-serif;
+// $font-accent-cursive: 'Architects Daughter', cursive;
+// $font-accent-cursive: 'Exo 2', sans-serif;
+$font-accent-cursive: 'Press Start 2P', cursive;
+// $font-accent-thin: 'Lato', sans-serif;
+$font-accent-thin: 'Exo 2', sans-serif;
 
 // Color scheme
 $color-base: #252836;
@@ -92,11 +95,22 @@ $tl-table-border-color: lighten(#363A4E, 5%);
 		background-size: cover;
 	}
 
-	.header-info {
+	.banner-img {
+		position: absolute;
+		left: 4.0rem;
+		top: 8.5rem;
+	}
+
+	.header-banner {
+		position: relative;
 		font-family: $font-accent-cursive;
-		// font-style: italic;
-		font-size: 2.0rem;
-		padding: 2.0rem;
+		font-size: 1.0rem;
+		top: 23.0rem;
+		padding: 2.8rem 2.8rem 2.8rem 20rem;
+
+		color: #bfbfff;
+		// background: linear-gradient(to right, rgba(24, 214, 255, 0.2) 0%,rgba(0, 0, 0, 0.04) 80%,rgba(0, 0, 0, 0) 100%);
+		background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, 0.04) 80%,rgba(0, 0, 0, 0) 100%);
 	}
 }
 
@@ -107,6 +121,17 @@ $tl-table-border-color: lighten(#363A4E, 5%);
 		.header-img {
 			min-height: 0.5 * $header-height;
 		}
+
+		.banner-img {
+			left: 2.0rem;
+			top: 4.5rem;
+			width: 128px;
+		}
+
+		.header-banner {
+			top: 8.2rem;
+			padding-left: 10.0rem;
+		}
 	}
 }
 
@@ -114,11 +139,13 @@ $tl-table-border-color: lighten(#363A4E, 5%);
 //-----------------------------------------------------------------------------
 .wrapper {
 	position: relative;
+	top: $header-height; /* Room for the header */
 	width: 100%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	margin-top: $header-height; /* Room for the header */
+	// margin-top: $header-height; /* Room for the header */
+	// padding-top: $header-height; /* Room for the header */
 	background-color: $color-base;
 
 	.content {
@@ -151,7 +178,8 @@ $tl-table-border-color: lighten(#363A4E, 5%);
 
 @media (max-width: $tl-breakpoint-mobile) {
 	.wrapper {
-		margin-top: 0.5 * $header-height; /* Room for the header */
+		top: 0.5 * $header-height; /* Room for the header */
+		// margin-top: 0.5 * $header-height; /* Room for the header */
 
 		.content:first-of-type {
 			padding-top: $navigation-height;
@@ -240,7 +268,7 @@ $tl-table-border-color: lighten(#363A4E, 5%);
 	height: calc(100% + 1.0rem);
 	background-position: center;
 	background-size: cover;
-	@include shadow-lg;
+	@include shadow-sm;
 }
 
 .asset-description-container {
