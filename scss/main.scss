@@ -252,6 +252,10 @@ $tl-table-border-color: lighten(#363A4E, 5%);
 
 // Main section
 //-----------------------------------------------------------------------------
+.row.row-asset {
+	margin-top: 8rem;
+}
+
 .col.col-asset {
 	padding: 0;
 }
